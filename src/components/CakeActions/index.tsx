@@ -72,7 +72,7 @@ any) => {
           </button>
         ) : null}
         <CopyToClipboard
-          text={[window.location.href, "shared=true"].join("&")}
+          text={[window.location.href].join("&")}
           onCopy={() => toast("500 anh em vào xem này")}
         >
           <button id="share" style={buttonStyle}>
