@@ -71,7 +71,7 @@ function App() {
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [run, setRun] = useState(true);
-  const [shareMode, setShareMode] = useState(false);
+  // const [shareMode, setShareMode] = useState(false);
 
   const [name, setName] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);

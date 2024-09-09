@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 interface InputProps {
   name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;
-  shareMode: boolean;
+  shareMode?: boolean;
   playing: boolean;
   run: boolean;
 }
@@ -12,7 +12,7 @@ interface InputProps {
 export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
   forwardRef(
     (
-      { shareMode, playing, run, ...rest }: InputProps,
+      { playing, run, ...rest }: InputProps,
       ref: React.LegacyRef<HTMLInputElement>
     ) => {
       // const onChange = useCallback(
@@ -61,7 +61,7 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
                 textAlign: "center",
                 backgroundColor: "transparent",
                 width: 400,
-                ...(shareMode && playing
+                ...(playing
                   ? {
                       appearance: "none",
                       backgroundColor: "transparent",
@@ -72,7 +72,7 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
               },
               value: "Phucdaynay",
               // onChange,
-              disabled: shareMode && playing && run,
+              disabled: playing && run,
               readOnly: true,
               // spellCheck: false,
               // autoFocus: true,
