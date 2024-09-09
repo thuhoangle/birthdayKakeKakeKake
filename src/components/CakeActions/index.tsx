@@ -71,14 +71,6 @@ any) => {
             <TbInfoCircleFilled />
           </button>
         ) : null}
-        <CopyToClipboard
-          text={[window.location.href].join("&")}
-          onCopy={() => toast("500 anh em vào xem này")}
-        >
-          <button id="share" style={buttonStyle}>
-            <TbShare3 />
-          </button>
-        </CopyToClipboard>
       </Fragment>
     );
   }, [
