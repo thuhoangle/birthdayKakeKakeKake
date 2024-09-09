@@ -15,8 +15,6 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
       { shareMode, playing, run, ...rest }: InputProps,
       ref: React.LegacyRef<HTMLInputElement>
     ) => {
-      console.log("🚀 ~ playing:", playing);
-      console.log("🚀 ~ shareMode:", shareMode);
       // const onChange = useCallback(
       //   (e: { target: { value: SetStateAction<string> } }) => {
       //     setName(e.target.value);
@@ -72,13 +70,12 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
                     }
                   : {}),
               },
-              value: "Sangpybara😏",
+              value: "Phucdaynay",
               // onChange,
               disabled: shareMode && playing && run,
               readOnly: true,
               // spellCheck: false,
               // autoFocus: true,
-              // placeholder: "Enter your name",
               ...rest,
             }}
           />
