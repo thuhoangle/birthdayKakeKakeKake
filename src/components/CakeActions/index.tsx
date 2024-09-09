@@ -1,4 +1,3 @@
-import { Fragment } from "react/jsx-runtime";
 import {
   TbPlayerPlayFilled,
   TbPlayerPauseFilled,
@@ -6,18 +5,17 @@ import {
   TbInfoCircleFilled,
   TbFlame,
   TbFlameOff,
-} from "react-icons/tb";
-import { useCallback } from "react";
-import { toast } from "react-toastify";
+} from 'react-icons/tb';
+import { useCallback } from 'react';
 
 const buttonStyle = {
-  color: "#ffffff",
+  color: '#ffffff',
   opacity: 0.9,
   borderWidth: 0,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#000000",
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#000000',
 };
 
 export const CakeActions = ({
@@ -36,7 +34,7 @@ any) => {
 
   const actions = useCallback(() => {
     return (
-      <Fragment>
+      <>
         {!playing || paused ? (
           <button id="start" style={buttonStyle} onClick={start}>
             {/* Start */}
@@ -69,7 +67,7 @@ any) => {
             <TbInfoCircleFilled />
           </button>
         ) : null}
-      </Fragment>
+      </>
     );
   }, [
     candleVisible,
@@ -84,7 +82,7 @@ any) => {
 
   const guideActions = useCallback(() => {
     return (
-      <Fragment>
+      <>
         <button id="start" style={buttonStyle} onClick={start} disabled={run}>
           {/* Start */}
           <TbPlayerPlayFilled />
@@ -109,16 +107,16 @@ any) => {
         {/*<button id="share" style={buttonStyle}>*/}
         {/*  <TbShare3 />*/}
         {/*</button>*/}
-      </Fragment>
+      </>
     );
   }, [candleVisible, pause, run, start, stop, toggleLightCandle]);
 
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
         gap: 16,
         padding: 16,
         height: 50,
