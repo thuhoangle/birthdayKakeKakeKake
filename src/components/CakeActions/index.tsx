@@ -6,7 +6,6 @@ import {
   TbInfoCircleFilled,
   TbFlame,
   TbFlameOff,
-  TbShare3,
 } from "react-icons/tb";
 import { useCallback } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
