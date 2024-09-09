@@ -20,12 +20,6 @@ import Joyride, { ACTIONS, CallBackProps } from "react-joyride";
 const src = new URL("/assets/hbd2.mp3", import.meta.url).href;
 
 const steps = [
-  // {
-  //   target: "#name",
-  //   content: "Sang ngu.",
-  //   placement: "bottom",
-  //   disableBeacon: true,
-  // },
   {
     target: "#candle",
     content: "khò lửa ấn đây, lửa lên thổi vô loa nhá, thôi vô màn hình cũng đc, nhìn ngu thôi chứ nến ko tắt đâu",
@@ -51,11 +45,11 @@ const steps = [
     content: "nổi lửa lại? oke luôn",
     placement: "top",
   },
-  {
-    target: "#share",
-    content: "Đẹp xuất sắc",
-    placement: "top",
-  },
+  // {
+  //   target: "#share",
+  //   content: "Đẹp xuất sắc",
+  //   placement: "top",
+  // },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ] as any;
 
@@ -83,7 +77,7 @@ function App() {
   const [name, setName] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);
 
-  const visibility = shareMode || playing
+  const visibility = playing
 
   const lightCandle = useCallback(() => setCandleVisible(true), []);
 
@@ -204,15 +198,15 @@ function App() {
     };
   }, [blowCandles]);
 
-  useLayoutEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const sharedParam = urlParams.get("shared");
-    if (sharedParam) {
-      setCandleVisible(true);
-      setShareMode(true);
-    }
-  }, []);
+  // useLayoutEffect(() => {
+  //   const queryString = window.location.search;
+  //   const urlParams = new URLSearchParams(queryString);
+  //   const sharedParam = urlParams.get("shared");
+  //   if (sharedParam) {
+  //     setCandleVisible(true);
+  //     setShareMode(true);
+  //   }
+  // }, []);
 
   return (
     <div
@@ -227,7 +221,7 @@ function App() {
       <Joyride
         styles={{
           options: {
-            zIndex: shareMode ? 10000 : -10000,
+            zIndex: -10000,
           },
           buttonSkip: {
             outline: 0,
@@ -255,7 +249,7 @@ function App() {
       <Joyride
         styles={{
           options: {
-            zIndex: !shareMode ? 10000 : -10000,
+            zIndex:  -10000,
           },
           buttonSkip: {
             outline: 0,
@@ -289,7 +283,6 @@ function App() {
             ref: nameRef,
             name,
             setName,
-            shareMode,
             playing,
             run,
             onKeyPress,
